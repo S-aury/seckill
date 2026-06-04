@@ -1,6 +1,8 @@
 package org.example.seckill.user.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.LoggerContext;
 import org.example.seckill.common.aspect.ApiOperationLog;
 import org.example.seckill.common.enums.ResponseCodeEnum;
 import org.example.seckill.common.exception.BizException;
@@ -47,5 +49,15 @@ public class TestController {
         // 模拟抛出系统异常
         int i = 1 / 0;
         return Response.success("不会走到这里");
+    }
+
+    /**
+     * 验证 Log4j2 是否使用了 Disruptor 异步日志
+     */
+    @GetMapping("/test/checkLogger")
+    public Response<String> checkLogger() {
+        LoggerContext ctx = (LoggerContext) LogManager.getContext(false);
+        String loggerClass = ctx.getRootLogger().getClass().getName();
+        return Response.success("Root Logger 实现类: " + loggerClass);
     }
 }
