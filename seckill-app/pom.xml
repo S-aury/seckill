@@ -35,11 +35,7 @@
             <artifactId>seckill-goods</artifactId>
         </dependency>
 
-        <!-- Spring Boot Web -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+
 
         <!-- Spring Boot Test 单元测试 -->
         <dependency>
