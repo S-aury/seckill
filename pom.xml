@@ -56,6 +56,11 @@
 
         <disruptor.version>3.4.4</disruptor.version>
 
+        <!-- SaToken 版本 -->
+        <sa-token.version>1.45.0</sa-token.version>
+        <!-- Hutool 版本 -->
+        <hutool.version>5.8.38</hutool.version>
+
     </properties>
 
     <!-- 统一依赖管理 -->
@@ -102,6 +107,21 @@
                 <artifactId>disruptor</artifactId>
                 <version>${disruptor.version}</version>
             </dependency>
+
+            <!-- SaToken 权限认证框架（适配 Spring Boot 3） -->
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-spring-boot3-starter</artifactId>
+                <version>${sa-token.version}</version>
+            </dependency>
+
+            <!-- Hutool 工具类库 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
