@@ -4,6 +4,8 @@ import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.example.seckill.common.aspect.ApiOperationLog;
 import org.example.seckill.common.utils.Response;
+import org.example.seckill.user.model.vo.LoginUserReqVO;
+import org.example.seckill.user.model.vo.LoginUserRspVO;
 import org.example.seckill.user.model.vo.RegisterUserReqVO;
 import org.example.seckill.user.service.UserService;
 import org.springframework.validation.annotation.Validated;
@@ -35,5 +37,14 @@ public class UserController {
     @ApiOperationLog(description = "用户注册")
     public Response<?> register(@Validated @RequestBody RegisterUserReqVO registerUserReqVO) {
         return userService.register(registerUserReqVO);
+    }
+
+    /**
+     * 用户登录
+     */
+    @PostMapping("/login")
+    @ApiOperationLog(description = "用户登录")
+    public Response<LoginUserRspVO> login(@Validated @RequestBody LoginUserReqVO loginUserReqVO) {
+        return userService.login(loginUserReqVO);
     }
 }

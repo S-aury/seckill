@@ -1,6 +1,8 @@
 package org.example.seckill.user.service;
 
 import org.example.seckill.common.utils.Response;
+import org.example.seckill.user.model.vo.LoginUserReqVO;
+import org.example.seckill.user.model.vo.LoginUserRspVO;
 import org.example.seckill.user.model.vo.RegisterUserReqVO;
 
 /**
@@ -19,4 +21,12 @@ public interface UserService {
      * @return
      */
     Response<?> register(RegisterUserReqVO registerUserReqVO);
+
+
+    /**
+     * 用户登录
+     * @param loginUserReqVO
+     * @return
+     */
+    Response<LoginUserRspVO> login(LoginUserReqVO loginUserReqVO);
 }
